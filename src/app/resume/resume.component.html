@@ -1,0 +1,13 @@
+
+
+  <img [src]="currentPic" alt="">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary" #enbtn>
+      <input type="radio" name="options" id="option1" autocomplete="off" (click)="onEn()" > English
+    </label>
+    <label class="btn btn-secondary" #gerbtn>
+      <input type="radio" name="options" id="option2" autocomplete="off" (click)="onDe()" > German
+    </label>
+  </div>
+  <a  [href]="currentCv" target="_blank">Download Pdf</a>
+

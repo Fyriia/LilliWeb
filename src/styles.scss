@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-bg1: rgb(97, 132, 214);
+  --color-bg2: rgb(154, 127, 227);
+  --color-bg3: rgb(236, 117, 237);
+ //  --col1: 18, 113, 255;
+  --col1: 100,223,241;
+  //--col2: 221, 74, 255;
+  --col2: 250,43,156;
+  //--col3: 100, 220, 255;
+  //--col3:144,236,228;
+  --col4:196,234,246;
+  //--col4: 200, 50, 50;
+  //--col5: 180, 180, 50;
+  --col5:178,227,165;
+  //--col-interactive: 140, 100, 255;
+ // --col-interactive: 231,42,245;
+  --col-interactive: 248,132,231;
+  --circle-size: 80%;
+  --blending: hard-light;
+  --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
+  --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
+  --primary-hue: 0;
+  --primary-lightness: 50;
+  --color: hsl(0, 0%, 100%);
+  --font-size: 26px;
+  --shadow-primary-hue: 180;
+}
+
+* {
+  font-family: "Roboto Light", sans-serif;
+}
+
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background:linear-gradient(48deg, var(--color-bg1),var(--color-bg2), var(--color-bg3));
+  overflow: hidden;
+}

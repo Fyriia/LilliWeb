@@ -1,0 +1,20 @@
+<h1>Graphenprogramm</h1>
+<div class="parent">
+  <div class="div1">
+    <div>
+      <label for="upload-input">Datei Hochladen (Format .csv): </label>
+      <input id="upload-input" type="file" accept=".csv">
+      <!-- Reference the canvas using #graphCanvas -->
+      <canvas #graphCanvas height="300px" width="500px" id="graph-canvas"></canvas>
+    </div>
+  </div>
+  <div class="div2">
+    <div id="results" class="container__results">
+      <h2>Berechnungen zu diesem Graph:</h2>
+      <div id="output"></div>
+      <!-- Add Angular event binding for click -->
+      <button id="matrizenButton" > Matrizen ein/ausblenden</button>
+      <div id="matrizen" class="hidden"></div>
+    </div>
+  </div>
+</div>

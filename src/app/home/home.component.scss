@@ -1,0 +1,33 @@
+* {
+  color: #FFFFFF;
+}
+
+.typing-container {
+  display: inline-block;
+}
+
+.home-container {
+  background-image: url("fyriia_A_young_woman_with_long_black_hair_sitting_in_a_modern_P_1244454e-fe62-4c7a-b8e9-2f3f5cb8d633.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.typed-out{
+  overflow: hidden;
+  border-right: .15em solid #ffffff;
+  white-space: nowrap;
+  animation:
+    typing 3s steps(40, end) forwards, blinking .8s infinite;
+  font-size: 1.6rem;
+  width: 0;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blinking {
+  from { border-color: transparent }
+  to { border-color: #ffffff; }
+}
