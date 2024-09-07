@@ -1,33 +1,182 @@
 * {
   color: #FFFFFF;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .typing-container {
   display: inline-block;
+  margin-top: 80px;
+  margin-left: 13vw;
 }
 
 .home-container {
-  background-image: url("fyriia_A_young_woman_with_long_black_hair_sitting_in_a_modern_P_1244454e-fe62-4c7a-b8e9-2f3f5cb8d633.png");
-  background-size: cover;
   width: 100vw;
   height: 100vh;
+  position: absolute;
+  top: 5vh;
+  padding: 0;
+  margin: 0;
 
 }
 
-.typed-out{
+.typed-out {
   overflow: hidden;
-  border-right: .15em solid #ffffff;
+  //border-right: .15em solid #ffffff;
   white-space: nowrap;
-  animation:
-    typing 3s steps(40, end) forwards, blinking .8s infinite;
-  font-size: 1.6rem;
-  width: 0;
+ /* animation:
+    typing 6s steps(80, end) forwards,
+    initial-blink 1s steps(4, end),
+    pause 0.5s steps(1, end) 0.5s forwards,
+    blinking .8s step-end infinite 1.5s;*/
+  font-size: 2.5rem;
+  //width: 0;
+  margin-left: -1.5vw;
+  margin-top: -7vh;
 }
+
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { width: 0; }
+  to { width: 100%; }
 }
+
 @keyframes blinking {
-  from { border-color: transparent }
-  to { border-color: #ffffff; }
+  0% { border-color: #ffffff; }
+  50% { border-color: transparent; }
+  100% { border-color: #ffffff; }
 }
+
+@keyframes initial-blink {
+  from { border-color: #ffffff; }
+  to { border-color: transparent; }
+}
+
+@keyframes pause {
+  from { border-color: transparent; }
+  to { border-color: transparent; }
+}
+
+h1 {
+  margin-top: 30vh;
+  margin-left: 18vw;
+  font-weight: 600;
+  font-size: 2.5rem;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-stretch: extra-expanded;
+}
+
+.asp{
+  position: absolute;
+  display: inline-block;
+  top: 31vh;
+  left: 14vw;
+  width: 125px;
+  opacity: 85%;
+}
+
+.btn-primary {
+  background-color: var(--bg-underlay);
+  display: block;
+  border-radius: 15px;
+  padding: 16px;
+  font-size: 1.5rem;
+  border: none;
+  margin-left: 21vw;
+  margin-top: 1.8vh;
+}
+
+.btn-primary:hover {
+  background-color: rgba(151, 3, 82, 0.75);
+}
+
+a {
+  top: 85%; /* Ensure the anchor tag is positioned */
+  left: 50%;
+  display: inline-block; /* Keep the anchor block-level */
+  color: white; /* Style the text */
+  text-align: center; /* Center the text under the arrow */
+  font-size: 1.2rem; /* Adjust the font size */
+  text-decoration: none; /* Remove underline */
+}
+.arrow {
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+}
+@keyframes sdb04 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
+.aspiring {
+  opacity: 0;
+  font-weight: 200;
+  animation: fadeIn 2s forwards 2s,
+  squiggly-anim 0.7s linear infinite 2s;
+;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+
+
+/* Keyframes for squiggly animation */
+@keyframes squiggly-anim {
+  0% {
+    filter: url('#squiggly-0');
+  }
+
+  25% {
+    filter: url('#squiggly-1');
+  }
+
+  50% {
+    filter: url('#squiggly-2');
+  }
+
+  75% {
+    filter: url('#squiggly-3');
+  }
+
+  100% {
+    filter: url('#squiggly-4');
+  }
+}
+
+/* Applying the squiggly animation */
+.squiggly {
+  animation: squiggly-anim 0.5s linear infinite;
+}
+
+.fade-in {
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s; /* Start the animation after 2 seconds */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Fully visible */
+  }
+}
+
+

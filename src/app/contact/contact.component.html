@@ -1,6 +1,7 @@
-
+<img class="main" src="contactsNew.png" alt="">
+<h1>Want to get in touch?</h1>
 <div class="contact-form-container">
-  <h2>Get in touch.</h2>
+
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
@@ -14,9 +15,6 @@
         #name="ngModel"
         placeholder="Your Name"
       />
-      <div *ngIf="name.invalid && name.touched" class="error-message">
-        Name is required.
-      </div>
     </div>
 
     <div class="form-group">
@@ -32,9 +30,6 @@
         #email="ngModel"
         placeholder="Your Email"
       />
-      <div *ngIf="email.invalid && email.touched" class="error-message">
-        Please enter a valid email.
-      </div>
     </div>
 
     <div class="form-group">
@@ -42,20 +37,23 @@
       <textarea
         id="message"
         class="form-control"
-        rows="5"
+        rows="10"
         ngModel
         name="message"
         required
         #message="ngModel"
         placeholder="Your Message"
       ></textarea>
-      <div *ngIf="message.invalid && message.touched" class="error-message">
-        Message is required.
-      </div>
     </div>
 
     <button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid">
       Send Message
     </button>
   </form>
+</div>
+<div class="contact-add-container">
+  <div class="wami"> <p> Email me directly at <br>Contact&#64;myMail.com</p><img src="icons8-email-50.png" alt=""></div>
+  <div class="wami"> <p>Visit my Github page</p><img src="icons8-github-30.png" alt=""> </div>
+
+
 </div>

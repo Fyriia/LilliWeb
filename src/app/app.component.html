@@ -1,4 +1,15 @@
-<div></div>
+<div *ngIf="showMainContent">
+  <app-header></app-header>
+  <app-home id="home"></app-home>
+  <app-resume id="skills"></app-resume>
+  <app-projects id="projects"></app-projects>
+  <app-contact id="contact"></app-contact>
+</div>
+
+<router-outlet *ngIf="!showMainContent"></router-outlet>
+
+
+
 <!--<div class="gradient-bg" (mousemove)="onMouseMove($event)">
 
   <button class="cybr-btn">
@@ -6,10 +17,12 @@
     <span aria-hidden="true" class="cybr-btn__glitch">Glitch_</span>
     <span aria-hidden="true" class="cybr-btn__tag">R25</span>
   </button>
--->
+
+<div>
 <app-header></app-header>
   <router-outlet></router-outlet>
- <!-- <svg xmlns="http://www.w3.org/2000/svg">
+</div>
+  <svg xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>

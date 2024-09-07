@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DatePipe, NgOptimizedImage} from "@angular/common";
+import {DatePipe, NgOptimizedImage, ViewportScroller} from "@angular/common";
 import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
@@ -14,14 +14,13 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   styleUrls: ['./header.component.scss'],
   providers: [DatePipe]
 })
-export class HeaderComponent implements OnInit{
-currentTime!: string;
+export class HeaderComponent{
 
-constructor(private datePipe : DatePipe) {
-}
+  constructor(private viewportScroller: ViewportScroller) {}
 
-ngOnInit() {
-  const now = new Date(); // Get the current date and time
-  this.currentTime = this.datePipe.transform(now, 'shortTime') || '';
-}
+  scrollToSection(sectionId: string): void {
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
+
+
 }

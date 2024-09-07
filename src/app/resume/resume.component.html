@@ -1,13 +1,57 @@
 
 
-  <img [src]="currentPic" alt="">
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary" #enbtn>
-      <input type="radio" name="options" id="option1" autocomplete="off" (click)="onEn()" > English
-    </label>
-    <label class="btn btn-secondary" #gerbtn>
-      <input type="radio" name="options" id="option2" autocomplete="off" (click)="onDe()" > German
-    </label>
+  <img class="cv" [src]="currentPic" alt="">
+  <img class="skill-pic" src="skillsdarker.png" alt="">
+  <div class="wrapper">
+
+  <div class="skills">
+
+    <div class="frontend">
+      <p class="heading">Frontend</p>
+      <div class="spec-container">
+        <img class="s-icon" src="angular.png">
+        <p class="specs">Angular</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="typescript.png">
+        <p class="specs">Typescript / Javascript</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="node.png">
+        <p class="specs">Node Js</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="html.png">
+        <p class="specs">HTML / CSS</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="photoshop.png">
+        <p class="specs">Photoshop</p>
+      </div>
+    </div>
+    <div class="backend">
+      <p class="heading">Backend</p>
+      <div class="spec-container">
+        <img class="s-icon" src="java.png">
+        <p class="specs">Java</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="sql.png">
+        <p class="specs">SQL</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="mysql.png">
+        <p class="specs">mySql</p>
+      </div>
+      <div class="spec-container">
+        <img class="s-icon" src="oracle.png">
+        <p class="specs">Oracle DB</p>
+      </div>
+
+
+    </div>
   </div>
-  <a  [href]="currentCv" target="_blank">Download Pdf</a>
+  </div>
+  <a class="pdf-download btn btn-primary" [href]="currentCv" target="_blank">Download my Resume</a>
+  <a class="btn btn-primary" (click)="scrollToSection('projects')" >View my Projects</a>
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-to-t',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './to-t.component.scss'
 })
 export class ToTComponent {
+
+  constructor(private location: Location) {}
+
+  goBack(): void {
+    this.location.back();
+  }
 
 }

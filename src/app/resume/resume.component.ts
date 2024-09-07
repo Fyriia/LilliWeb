@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-resume',
@@ -19,7 +20,7 @@ export class ResumeComponent implements OnInit, AfterViewInit{
 
   currentCv!: SafeResourceUrl;
 
-  constructor(private sanitizer: DomSanitizer,private renderer : Renderer2) { }
+  constructor(private sanitizer: DomSanitizer,private renderer : Renderer2, private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
     this.gerCv = this.sanitizer.bypassSecurityTrustResourceUrl(this.gerCv);
@@ -45,4 +46,10 @@ export class ResumeComponent implements OnInit, AfterViewInit{
     this.renderer.removeClass(this.enBtn.nativeElement, "active");
   }
 
+  scrollToSection(sectionId: string): void {
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
+
 }
+
+

@@ -1,20 +1,23 @@
-<h1>Graphenprogramm</h1>
+<div class="bg-container">
+<h1>Graph Application</h1>
+  <a class="back" (click)="goBack()"><img src="icons8-back-100.png" alt=""></a>
 <div class="parent">
   <div class="div1">
-    <div>
-      <label for="upload-input">Datei Hochladen (Format .csv): </label>
+    <div class="canvas-container">
+      <label for="upload-input">Upload File (Format .csv): </label>
       <input id="upload-input" type="file" accept=".csv">
       <!-- Reference the canvas using #graphCanvas -->
-      <canvas #graphCanvas height="300px" width="500px" id="graph-canvas"></canvas>
+      <canvas #graphCanvas height="500px" width="800px" id="graph-canvas"></canvas>
     </div>
   </div>
   <div class="div2">
     <div id="results" class="container__results">
-      <h2>Berechnungen zu diesem Graph:</h2>
+      <h2>Calculations for this Graph:</h2>
       <div id="output"></div>
       <!-- Add Angular event binding for click -->
-      <button id="matrizenButton" > Matrizen ein/ausblenden</button>
+      <button id="matrizenButton" > Show/Hide Matrices</button>
       <div id="matrizen" class="hidden"></div>
     </div>
   </div>
+</div>
 </div>

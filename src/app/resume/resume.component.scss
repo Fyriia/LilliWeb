@@ -1,18 +1,102 @@
-img {
+.cv{
   position: absolute;
   width: 28vw;
   border-radius: 10px;
-  left: 5%;
-  top: 15%;
+  left: 65%;
+  top: 150%;
+  display: none;
 }
 
-div {
+.skill-pic {
   position: absolute;
-  left: 36%;
-  top: 15%;
+  width: 43vw;
+  left: 55%;
+  top: 133%;
+
+}
+
+.cv-options {
+  position: absolute;
+  left: 75%;
+  top: 230%;
 }
 
 input {
   appearance: none;
 }
+
+
+
+.skills {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 20vw;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  margin-left: 25px;
+}
+
+.frontend {
+  padding: 16px;
+  margin-top: 20px;
+  margin-left: 8vw;
+}
+
+.specs {
+  font-weight: 200;
+  font-size: 1rem;
+  width: 12vw;
+  margin-top: 20px;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+.wrapper {
+  background-color:  rgba(128, 34, 65, 0.73);
+  width: 55vw;
+  margin: 10vh auto 8vh 3vw;
+  border-radius: 15px;
+}
+
+.btn-primary {
+  background-color: var(--bg-underlay);
+  border-radius: 15px;
+  padding: 16px;
+  font-size: 1.5rem;
+  border: none;
+  margin-left: 10vw;
+  width: 18vw;
+  display: inline;
+}
+
+.btn-primary:hover {
+  background-color: rgba(67, 53, 110, 0.75);
+}
+
+.s-icon {
+  object-fit: cover;
+  width: 80px;
+  height: 100%;
+}
+
+.spec-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 22vw;
+  padding-top: 15px;
+}
+
+ .backend {
+  padding: 16px;
+  margin-top: 20px;
+  margin-left: 2vw;
+}
+
+
 

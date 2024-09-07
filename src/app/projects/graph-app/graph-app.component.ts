@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, output, ViewChild} from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-graph-app',
@@ -8,6 +9,12 @@ import {AfterViewInit, Component, ElementRef, OnInit, output, ViewChild} from '@
   styleUrl: './graph-app.component.scss'
 })
 export class GraphAppComponent implements OnInit, AfterViewInit {
+
+  constructor(private location: Location) {}
+
+  goBack(): void {
+    this.location.back();
+  }
 
   @ViewChild('graphCanvas', { static: true }) graphCanvas!: ElementRef<HTMLCanvasElement>;
   context!: CanvasRenderingContext2D;
@@ -255,7 +262,7 @@ export class GraphAppComponent implements OnInit, AfterViewInit {
 
     if (graphDisconnected) {
       const p = document.createElement('p');
-      p.textContent = 'Graph ist nicht zusammenhängend.';
+      p.textContent = 'Graph is disconnected.';
       outputDiv?.appendChild(p);
       return; // Exit the function early since the graph is disconnected
     }
@@ -271,14 +278,14 @@ export class GraphAppComponent implements OnInit, AfterViewInit {
     let zentrum = eccentricities.filter(e => e[1] === radius).map(e => this.toLetters(e[0] + 1)).join(', ');
 
     const p2 = document.createElement('p');
-    p2.innerHTML = `Der Durchmesser dieses Graphs beträgt <strong>${durchmesser}</strong>, der Radius beträgt <strong>${radius}</strong> und das Zentrum/die Zentren ist/sind <strong>${zentrum}</strong>.`;
+    p2.innerHTML = `The diameter of this Graph is <strong>${durchmesser}</strong>, the radius is <strong>${radius}</strong> and the center(s) is/are <strong>${zentrum}</strong>.`;
 
     outputDiv?.appendChild(p2);
   }
 
   initializeWegmatrix(m: any) {
     if (!m) {
-      throw new Error('Übergebene Matrix ist null.');
+      throw new Error('Provided matrix is null.');
     }
     let wegmatrix = { values: [] as number[][] };
     let numColumns = m.values.length;
@@ -333,9 +340,9 @@ export class GraphAppComponent implements OnInit, AfterViewInit {
     }
 
     const p = document.createElement('p');
-    p.innerHTML = `Die Artikulation/en in diesem Graphen ist/sind <strong>${articulations.join(', ')}</strong>.`;
+    p.innerHTML = `The articulation point(s) in this graph is/are <strong>${articulations.join(', ')}</strong>.`;
     if (articulations.length === 0) {
-      p.textContent = 'Dieser Graph enthält keine Artikulationen.';
+      p.textContent = 'This graph contains no articulation points.';
     }
     document.getElementById('output')?.appendChild(p);
 
@@ -353,7 +360,7 @@ export class GraphAppComponent implements OnInit, AfterViewInit {
           mCopy.values[i][j] = 0;
           mCopy.values[j][i] = 0;
           if (this.calcComponents(mCopy) > baseCount) {
-            bridges.push(`${this.toLetters(i + 1)} und ${this.toLetters(j + 1)}`);
+            bridges.push(`${this.toLetters(i + 1)} and ${this.toLetters(j + 1)}`);
           }
           mCopy.values[i][j] = 1;
           mCopy.values[j][i] = 1;
@@ -362,9 +369,9 @@ export class GraphAppComponent implements OnInit, AfterViewInit {
     }
 
     const p = document.createElement('p');
-    p.innerHTML = `Die Brücke/n in diesem Graphen ist/sind zwischen <strong>${bridges.join(', ')}</strong>.`;
+    p.innerHTML = `The bridge(s) in this graph is/are between <strong>${bridges.join(', ')}</strong>.`;
     if (bridges.length === 0) {
-      p.textContent = 'Dieser Graph enthält keine Brücken.';
+      p.textContent = 'This graph contains no bridges.';
     }
     document.getElementById('output')?.appendChild(p);
     return bridges;

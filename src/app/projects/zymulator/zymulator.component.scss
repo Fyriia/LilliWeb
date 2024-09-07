@@ -1,6 +1,7 @@
+
 * {
   font-family: 'Press Start 2P', sans-serif;
-  color: snow;
+  color: white;
 }
 
 .hidden {
@@ -12,20 +13,14 @@
   z-index: -1;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 
 
 #utilityBar {
-  width: 400px;
-  height: 90px;
+  width: 600px;
+  height: 100px;
   position: absolute;
-  top: 878px;
-  left: 340px;
+  top: 86.8%;
+  left: 560px;
   background: rgb(69,47,94);
   background: linear-gradient(90deg, rgba(69, 47, 94, 0.58) 0%, rgba(91,75,102,0.6159196100315126) 100%);
   border: 2px solid #452F5E93;
@@ -61,8 +56,8 @@ body {
 }
 
 #weather-display {
-  width: 240px;
-  height: 170px;
+  width: 14%;
+  height: 15%;
   background: rgb(69,47,94);
   background: linear-gradient(90deg, rgba(69, 47, 94, 0.58) 0%, rgba(91,75,102,0.6159196100315126) 100%);
   border: 2px solid #452F5E93;
@@ -70,13 +65,11 @@ body {
   position: absolute;
   font-size: 1.1rem;
   z-index: 100;
-  margin: 0 0 0 10px;
+  margin: 0;
 
 }
 
-.display-text {
 
-}
 
 .cold {
   color: deepskyblue;
@@ -92,7 +85,7 @@ body {
 
 #utilityBar > img {
   position: relative;
-  width: 60px;
+  width: 75px;
   opacity: 80%;
   top: -10%;
 }
@@ -105,7 +98,7 @@ body {
 #needs {
   position:absolute;
   top: 67%;
-  left:16%;
+  left:37%;
   z-index: 999;
 }
 
@@ -237,8 +230,8 @@ body {
 
 #target {
   position: absolute;
-  left: 490px;
-  top: 710px;
+  left: 820px;
+  top: 610px;
 }
 
 #target img {
@@ -247,10 +240,18 @@ body {
 
 
 .app-container {
-  width: 1000px;
-  height: 600px;
+  width: 1200px;
+  height: 700px;
   background: url("fyriia_a_forest_clearing_with_blue_clear_cloudless_sky_visible__a1b93ac5-9feb-4dd2-89a9-88483656572c.png");
   background-size: cover;
-  border-radius: 5px;
-  margin-top: 300px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-left: 15%;
+}
+
+.bg-container {
+  background-color: #f92f75;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 180px;
 }

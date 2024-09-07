@@ -24,21 +24,30 @@
   --color: hsl(0, 0%, 100%);
   --font-size: 26px;
   --shadow-primary-hue: 180;
+  --bg-underlay: rgba(128, 34, 65, 0.73);
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 10px;
 }
 
 * {
   font-family: "Roboto Light", sans-serif;
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden ;
+}
+
+html {
+  padding: 0;
+  margin: 0;
 }
 
 @font-face {
   font-family: Cyber;
   src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
   font-display: swap;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  background:linear-gradient(48deg, var(--color-bg1),var(--color-bg2), var(--color-bg3));
-  overflow: hidden;
 }

@@ -1,5 +1,6 @@
 
 
+/*
 html,body {
   margin: 0;
   padding: 0;
@@ -147,6 +148,43 @@ html,body {
 
   opacity: 0.7;
 }
+*/
 
+div {
+  background-image: url("bgshort.png");
+  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  justify-content: flex-start; /* Start stacking from the top */
+  align-items: stretch; /* Ensure components take up the full width */
+
+}
+
+ app-home, app-resume, app-projects, app-contact {
+  width: 100%; /* Ensure full width */
+  min-height: 100vh; /* Ensure each section at least fills the viewport height */
+  display: block;
+}
+
+ app-home {
+   height: 130vh;
+ }
+
+ app-header {
+   position: fixed;
+   z-index: 99;
+ }
+
+ html {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+
+ body {
+   margin: 0;
+   padding: 0;
+ }
 
 
